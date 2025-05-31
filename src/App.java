@@ -1,24 +1,21 @@
-import javax.swing.JFrame;
-
+import javax.swing.*;
+import java.awt.CardLayout;
 public class App {
-    public static void main(String[] args) throws Exception {
-        int rowCount = 21;
-        int columnCount = 19;
-        int tileSize = 32;
-        int boardWidth = columnCount * tileSize;
-        int boardHeight = rowCount * tileSize;
-
+    public static void main(String[] args) {
         JFrame frame = new JFrame("Pac Man");
-        // frame.setVisible(true);
-        frame.setSize(boardWidth, boardHeight);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(608, 672); // Match your tile layout
+
+        CardLayout cardLayout = new CardLayout();
+        JPanel mainPanel = new JPanel(cardLayout);
+
+        // Create and add the main menu panel
+        MainMenu menu = new MainMenu(cardLayout, mainPanel);
+        mainPanel.add(menu, "MainMenu");
+
+        frame.add(mainPanel);
         frame.setLocationRelativeTo(null);
         frame.setResizable(false);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        PacMan pacmanGame = new PacMan();
-        frame.add(pacmanGame);
-        frame.pack();
-        pacmanGame.requestFocus();
         frame.setVisible(true);
     }
 }
