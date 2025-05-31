@@ -1,5 +1,5 @@
 import javax.swing.*;
-
+import java.awt.*;
 public class App {
     public static void main(String[] args) {
         JFrame frame = new JFrame("Pac Man");
@@ -10,7 +10,7 @@ public class App {
         JPanel mainPanel = new JPanel(cardLayout);
 
         // Create and add the main menu panel
-        MainMenuPanel menu = new MainMenuPanel(cardLayout, mainPanel);
+        MainMenu menu = new MainMenu(cardLayout, mainPanel);
         mainPanel.add(menu, "MainMenu");
 
         frame.add(mainPanel);
