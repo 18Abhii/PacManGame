@@ -45,4 +45,8 @@ public class MainMenu extends JPanel {
         gbc.gridy++;
         add(exitButton, gbc);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b18f3e2b4873a927fb0da2f24698a73f2f80ccd0
